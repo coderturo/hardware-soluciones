@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/astro/Navbar.astro';
+import Hero from '../components/astro/Hero.astro';
+import Services from '../components/astro/Services.astro';
+import About from '../components/astro/About.astro';
+import ContactSection from '../components/astro/ContactSection.astro';
+import Footer from '../components/astro/Footer.astro';
+import { CatalogueSection } from '../components/react/CatalogueSection';
+import { WhatsAppFloatingBtn } from '../components/react/WhatsAppFloatingBtn';
+---
+
+<Layout>
+  <!-- Sticky Navigation Header -->
+  <Navbar />
+
+  <main id="top">
+    <!-- Hero Section -->
+    <Hero />
+
+    <!-- Services Section -->
+    <Services />
+
+    <!-- Catalogue Section -->
+    <section id="catalogo" class="py-20 sm:py-28 bg-background border-t border-border relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <!-- Section Title & Intro -->
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold tracking-wider uppercase">
+            Catálogo Destacado
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black text-foreground tracking-tight">
+            Partes de cómputo listas para tu próximo equipo
+          </h2>
+          <p class="text-base sm:text-lg text-muted-foreground">
+            Componentes originales sellados con garantía escrita. Filtra por categoría y cotiza al instante por WhatsApp con disponibilidad para Lima y Callao.
+          </p>
+        </div>
+
+        <!-- Interactive React Catalogue with Category Filter & Search -->
+        <CatalogueSection client:visible />
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <About />
+
+    <!-- Contact & Zod Form Section -->
+    <ContactSection />
+  </main>
+
+  <!-- Footer -->
+  <Footer />
+
+  <!-- Floating WhatsApp Action Button with Notification Bubble -->
+  <WhatsAppFloatingBtn client:idle />
+</Layout>

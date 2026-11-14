@@ -1,0 +1,84 @@
+---
+import '../styles/global.css';
+import { SITE_CONFIG } from '@/data/siteData';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = `${SITE_CONFIG.name} | Partes de Cómputo, Software, Videovigilancia e IoT en Lima y Callao`,
+  description = SITE_CONFIG.description,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://hardwareysoluciones.pe');
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": SITE_CONFIG.name,
+  "description": SITE_CONFIG.description,
+  "telephone": SITE_CONFIG.phone,
+  "email": SITE_CONFIG.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Pablo de Olavide 329, Urb. La Colonial",
+    "addressLocality": "Callao",
+    "addressRegion": "Callao / Lima",
+    "addressCountry": "PE"
+  },
+  "openingHours": "Mo-Sa 09:00-19:00",
+  "priceRange": "S/.",
+  "currenciesAccepted": "PEN"
+};
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content={SITE_CONFIG.name} />
+    <meta property="og:image" content="/images/hero-tech.webp" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/images/hero-tech.webp" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+    <!-- Theme initialization script (runs immediately to prevent FOUC) -->
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        // Default to light mode as requested, but allow user toggle
+        return 'light';
+      })();
+
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  </head>
+  <body class="bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary">
+    <slot />
+  </body>
+</html>

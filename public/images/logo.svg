@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" fill="none">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="50%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <linearGradient id="circuitGrad" x1="10" y1="10" x2="50" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#22c55e" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon Emblem (Shield + Microchip Circuit) -->
+  <g transform="translate(10, 10)">
+    <!-- Shield Outer Frame -->
+    <path d="M30 4 L56 12 C56 36 30 52 30 54 C30 52 4 36 4 12 Z" 
+          fill="url(#shieldGrad)" fill-opacity="0.15" 
+          stroke="url(#shieldGrad)" stroke-width="2.5" stroke-linejoin="round" />
+    
+    <!-- Microchip Core -->
+    <rect x="18" y="18" width="24" height="24" rx="4" 
+          fill="#0f172a" stroke="url(#shieldGrad)" stroke-width="2" />
+    
+    <!-- Circuit lines & nodes -->
+    <path d="M30 18 V12 M30 42 V48 M18 30 H12 M42 30 H48" 
+          stroke="#38bdf8" stroke-width="2" stroke-linecap="round" />
+    <circle cx="30" cy="12" r="1.5" fill="#38bdf8" />
+    <circle cx="30" cy="48" r="1.5" fill="#38bdf8" />
+    <circle cx="12" cy="30" r="1.5" fill="#38bdf8" />
+    <circle cx="48" cy="30" r="1.5" fill="#38bdf8" />
+    
+    <!-- Central status core node -->
+    <circle cx="30" cy="30" r="4.5" fill="url(#circuitGrad)" />
+    <circle cx="30" cy="30" r="2" fill="#ffffff" />
+  </g>
+
+  <!-- Typography -->
+  <text x="80" y="38" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="22" letter-spacing="-0.03em" class="fill-foreground" fill="currentColor">
+    Hardware <tspan fill="#0ea5e9">&amp;</tspan> Soluciones
+  </text>
+  <text x="82" y="55" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="10" letter-spacing="0.22em" fill="#64748b" text-transform="uppercase">
+    TECNOLOGÍA &amp; SEGURIDAD
+  </text>
+</svg>

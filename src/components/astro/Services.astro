@@ -1,0 +1,105 @@
+---
+import { SERVICES, SITE_CONFIG } from '@/data/siteData';
+
+const getWhatsAppServiceUrl = (title: string) => {
+  const text = encodeURIComponent(
+    `Hola Hardware & Soluciones, deseo consultar detalles y precios sobre el servicio: *${title}*.`
+  );
+  return `${SITE_CONFIG.whatsappBaseUrl}?text=${text}`;
+};
+---
+
+<section id="servicios" class="py-20 sm:py-28 bg-muted/20 border-t border-border relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold tracking-wider uppercase">
+        Nuestros Servicios
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-black text-foreground tracking-tight">
+        Soluciones integrales de cómputo y seguridad electrónica
+      </h2>
+      <p class="text-base sm:text-lg text-muted-foreground">
+        Desde la elección del componente exacto hasta la instalación y monitoreo remoto de cámaras: te acompañamos en todo el ciclo tecnológico de tu hogar o empresa.
+      </p>
+    </div>
+
+    <!-- Services Grid (2x2) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {SERVICES.map((service, index) => (
+        <div class="group flex flex-col bg-card rounded-3xl border border-border hover:border-primary/50 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
+          
+          <!-- Image Header Box -->
+          <div class="relative aspect-[16/9] overflow-hidden bg-slate-900">
+            <img 
+              src={service.image} 
+              alt={service.title}
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-background/90 text-foreground backdrop-blur-md border border-border shadow-xs">
+                0{index + 1} · Servicio Especializado
+              </span>
+            </div>
+
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <h3 class="text-xl sm:text-2xl font-black leading-tight drop-shadow-sm">
+                {service.title}
+              </h3>
+            </div>
+          </div>
+
+          <!-- Body Content -->
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <p class="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                {service.fullDesc}
+              </p>
+
+              <!-- Highlights list -->
+              <div class="space-y-2.5 pt-2">
+                <p class="text-xs font-bold uppercase tracking-wider text-foreground">
+                  Incluye y abarca:
+                </p>
+                <ul class="space-y-2">
+                  {service.highlights.map((item) => (
+                    <li class="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/90">
+                      <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <!-- WhatsApp Action Button -->
+            <div class="pt-4 border-t border-border">
+              <a
+                href={getWhatsAppServiceUrl(service.title)}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full inline-flex items-center justify-center gap-2 h-11 sm:h-12 px-5 rounded-xl bg-[#0f766e] hover:bg-[#115e59] dark:bg-[#14b8a6] dark:hover:bg-[#0d9488] text-white dark:text-slate-950 font-bold text-sm shadow-xs transition-all active:scale-[0.99] group/btn"
+              >
+                <svg class="w-4 h-4 fill-current stroke-none" viewBox="0 0 24 24">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.353.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/>
+                </svg>
+                <span>Cotizar {service.title} por WhatsApp</span>
+                <svg class="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 17 17 7M7 7h10v10"/>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,118 @@
+---
+import { STATS, SITE_CONFIG } from '@/data/siteData';
+
+const PILLARS_WITH_ICONS = [
+  {
+    tag: "Calidad Certificada",
+    title: "Componentes 100% Originales",
+    desc: "Trabajamos directamente con distribuidores autorizados en Lima. Todos los productos vienen en caja sellada con número de serie y garantía escrita.",
+    iconSvg: `<svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>`
+  },
+  {
+    tag: "Transparencia Total",
+    title: "Asesoría Técnica a tu Medida",
+    desc: "No te vendemos lo más caro, sino lo que verdaderamente necesitas para tus tareas diarias, videojuegos, trabajo de render o seguridad de tu local.",
+    iconSvg: `<svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>`
+  },
+  {
+    tag: "Respaldo y Compromiso",
+    title: "Instalación y Soporte Postventa",
+    desc: "Te acompañamos desde la entrega hasta la puesta en marcha de tus cámaras CCTV o computadoras, con asistencia presencial en Callao y remota 24/7.",
+    iconSvg: `<svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>`
+  }
+];
+---
+
+<section id="nosotros" class="py-20 sm:py-28 bg-background border-t border-border relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+    
+    <!-- Top Grid: Story & Stats -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Text side -->
+      <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-muted text-foreground text-xs font-semibold tracking-wider uppercase border border-border">
+          Quiénes Somos
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-foreground tracking-tight leading-tight">
+          Especialistas en hardware, software y seguridad electrónica
+        </h2>
+        <p class="text-base sm:text-lg text-muted-foreground leading-relaxed">
+          En <strong>Hardware & Soluciones</strong> ayudamos a usuarios particulares, profesionales y empresas a comprar con criterio, instalar tecnología de alto rendimiento y mantener sus sistemas de vigilancia siempre operativos.
+        </p>
+        <p class="text-sm sm:text-base text-muted-foreground leading-relaxed">
+          Ubicados en el Callao con atención para toda Lima Metropolitana, nos caracterizamos por ofrecer componentes 100% originales con garantía por escrito, diagnósticos transparentes y soporte técnico de respuesta rápida.
+        </p>
+
+        <!-- Address Badge -->
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 text-xs text-muted-foreground">
+          <div class="flex items-center gap-2.5 p-3.5 rounded-xl bg-muted border border-border text-foreground">
+            <svg class="w-4 h-4 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span class="font-medium">{SITE_CONFIG.address}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image side -->
+      <div class="lg:col-span-6">
+        <div class="rounded-3xl overflow-hidden border border-border bg-card shadow-lg p-3">
+          <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-900 relative">
+            <img 
+              src="/images/about-tech.webp" 
+              alt="Taller técnico y laboratorio de Hardware y Soluciones" 
+              loading="lazy"
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <p class="text-xs uppercase tracking-widest text-primary font-bold">Laboratorio Técnico</p>
+              <p class="text-base sm:text-lg font-bold">Ensamblaje, Mantenimiento & Configuración de Redes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats Matrix (Solid text colors, no gradient text) -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+      {STATS.map((stat) => (
+        <div class="p-6 rounded-2xl bg-card border border-border text-center space-y-1.5 shadow-xs">
+          <p class="text-3xl sm:text-4xl lg:text-5xl font-black text-primary">
+            {stat.value}
+          </p>
+          <p class="text-sm font-bold text-foreground">
+            {stat.label}
+          </p>
+          <p class="text-xs text-muted-foreground font-medium">
+            {stat.desc}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <!-- 3 Pillars Grid with Rich Visual Icons & Badges -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {PILLARS_WITH_ICONS.map((pillar) => (
+        <div class="p-6 sm:p-8 rounded-2xl bg-card border border-border space-y-4 relative overflow-hidden group hover:border-primary/50 transition-colors shadow-xs">
+          <div class="flex items-center justify-between">
+            <div class="w-12 h-12 rounded-xl bg-muted flex items-center justify-center p-2.5" set:html={pillar.iconSvg} />
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-muted text-foreground/80 border border-border">
+              {pillar.tag}
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+            {pillar.title}
+          </h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            {pillar.desc}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
