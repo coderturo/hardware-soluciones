@@ -16,6 +16,14 @@ export function CatalogueSection() {
   const [selectedCategory, setSelectedCategory] = useState("todos");
   const [searchQuery, setSearchQuery] = useState("");
 
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = { todos: PRODUCTS.length };
+    PRODUCTS.forEach((p) => {
+      counts[p.category] = (counts[p.category] || 0) + 1;
+    });
+    return counts;
+  }, []);
+
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter((product) => {
       const matchesCategory =
@@ -58,18 +66,28 @@ export function CatalogueSection() {
         <div className="flex flex-wrap items-center gap-2 pt-1">
           {CATEGORIES.map((cat) => {
             const isActive = selectedCategory === cat.id;
+            const count = categoryCounts[cat.id] || 0;
             return (
               <button
                 key={cat.id}
                 type="button"
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium transition-colors cursor-pointer min-h-[38px] ${
+                className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium transition-colors cursor-pointer min-h-[38px] flex items-center gap-2 ${
                   isActive
-                    ? "bg-primary text-primary-foreground font-semibold"
+                    ? "bg-primary text-primary-foreground font-semibold shadow-xs"
                     : "bg-muted text-muted-foreground hover:bg-accent hover:text-foreground"
                 }`}
               >
-                {cat.label}
+                <span>{cat.label}</span>
+                <span
+                  className={`text-[11px] px-1.5 py-0.5 rounded-full font-mono ${
+                    isActive
+                      ? "bg-primary-foreground/20 text-primary-foreground"
+                      : "bg-background/80 text-muted-foreground border border-border/50"
+                  }`}
+                >
+                  {count}
+                </span>
               </button>
             );
           })}

@@ -101,6 +101,7 @@ export const SERVICES: Service[] = [
 ];
 
 export const PRODUCTS: Product[] = [
+  // --- Procesadores ---
   {
     id: "ryzen-7-5700x",
     name: "Procesador AMD Ryzen 7 5700X",
@@ -109,73 +110,239 @@ export const PRODUCTS: Product[] = [
     specs: ["8 Núcleos / 16 Hilos", "Socket AM4", "Hasta 4.6 GHz Max Boost", "32MB L3 Cache"],
     price: 749,
     priceFormatted: "S/. 749.00",
-    image: "/images/prod-ryzen.webp",
+    image: "/images/prod-ryzen-5700x.webp",
     badge: "Más Vendido",
     inStock: true,
     warranty: "36 Meses de Garantía"
   },
   {
-    id: "rtx-4060-8gb",
-    name: "Tarjeta Gráfica GeForce RTX 4060 8GB",
-    category: "graficas",
-    categoryLabel: "Tarjetas Gráficas",
-    specs: ["8GB GDDR6", "Ray Tracing & DLSS 3", "Arquitectura Ada Lovelace", "Ideal Gaming & Edición"],
-    price: 1899,
-    priceFormatted: "S/. 1,899.00",
-    image: "/images/prod-rtx.webp",
-    badge: "Alto Rendimiento",
-    inStock: true,
-    warranty: "24 Meses de Garantía"
-  },
-  {
-    id: "ram-ddr4-16gb",
-    name: "Memoria RAM DDR4 16GB 3200MHz",
-    category: "memorias",
-    categoryLabel: "Memorias RAM",
-    specs: ["Capacidad: 16GB", "Velocidad: 3200MHz", "Disipador de Aluminio", "Soporte XMP 2.0"],
-    price: 189,
-    priceFormatted: "S/. 189.00",
-    image: "/images/prod-ram.webp",
-    badge: "Excelente Precio",
-    inStock: true,
-    warranty: "12 Meses de Garantía"
-  },
-  {
-    id: "ssd-nvme-1tb-gen4",
-    name: "SSD NVMe 1TB PCIe Gen4 x4",
-    category: "almacenamiento",
-    categoryLabel: "Almacenamiento",
-    specs: ["Capacidad: 1TB", "Lectura hasta 7000 MB/s", "Formato M.2 2280", "Disipador térmico incluido"],
-    price: 349,
-    priceFormatted: "S/. 349.00",
-    image: "/images/prod-ssd.webp",
-    badge: "Ultra Rápido",
+    id: "ryzen-5-5600x",
+    name: "Procesador AMD Ryzen 5 5600X",
+    category: "procesadores",
+    categoryLabel: "Procesadores",
+    specs: ["6 Núcleos / 12 Hilos", "Socket AM4", "Hasta 4.6 GHz Max Boost", "35MB GameCache"],
+    price: 599,
+    priceFormatted: "S/. 599.00",
+    image: "/images/prod-ryzen-5600x.webp",
+    badge: "Top Calidad / Precio",
     inStock: true,
     warranty: "36 Meses de Garantía"
   },
   {
-    id: "placa-b550-atx",
-    name: "Placa Madre B550 ATX Ultra Durable",
-    category: "placas",
-    categoryLabel: "Placas Madre",
-    specs: ["Socket AMD AM4", "Ranura PCIe 4.0 x16", "Doble Slot M.2 NVMe", "Audio HD 7.1 & LAN Gigabit"],
-    price: 459,
-    priceFormatted: "S/. 459.00",
-    image: "/images/prod-b550.webp",
-    badge: "Estabilidad Total",
+    id: "intel-i7-13700k",
+    name: "Procesador Intel Core i7-13700K",
+    category: "procesadores",
+    categoryLabel: "Procesadores",
+    specs: ["16 Núcleos (8P+8E) / 24 Hilos", "Socket LGA 1700", "Hasta 5.4 GHz Turbo", "Intel UHD Graphics 770"],
+    price: 1749,
+    priceFormatted: "S/. 1,749.00",
+    image: "/images/prod-intel-i7.webp",
+    badge: "Alto Rendimiento",
+    inStock: true,
+    warranty: "36 Meses de Garantía"
+  },
+
+  // --- Tarjetas Gráficas ---
+  {
+    id: "rtx-4060-8gb",
+    name: "Tarjeta Gráfica ASUS Dual GeForce RTX 4060 8GB",
+    category: "graficas",
+    categoryLabel: "Tarjetas Gráficas",
+    specs: ["8GB GDDR6", "Ray Tracing & DLSS 3", "Arquitectura Ada Lovelace", "Ideal 1080p Ultra"],
+    price: 1449,
+    priceFormatted: "S/. 1,449.00",
+    image: "/images/prod-rtx-4060.webp",
+    badge: "Más Popular",
     inStock: true,
     warranty: "24 Meses de Garantía"
   },
   {
-    id: "fuente-750w-bronze",
-    name: "Fuente de Poder 750W 80+ Bronze",
+    id: "rtx-4070-aero-12gb",
+    name: "Tarjeta Gráfica Gigabyte GeForce RTX 4070 Aero OC 12GB",
+    category: "graficas",
+    categoryLabel: "Tarjetas Gráficas",
+    specs: ["12GB GDDR6X 192-bit", "DLSS 3 & Ray Tracing", "Triple Fan Windforce", "Gaming 1440p / 4K"],
+    price: 2899,
+    priceFormatted: "S/. 2,899.00",
+    image: "/images/prod-rtx-4070.webp",
+    badge: "Gama Alta",
+    inStock: true,
+    warranty: "24 Meses de Garantía"
+  },
+  {
+    id: "rtx-3060-igame-12gb",
+    name: "Tarjeta Gráfica Colorful iGame GeForce RTX 3060 Ultra 12GB",
+    category: "graficas",
+    categoryLabel: "Tarjetas Gráficas",
+    specs: ["12GB GDDR6", "Triple Ventilador RGB", "Dual BIOS One-Key OC", "Ray Tracing & DLSS"],
+    price: 1299,
+    priceFormatted: "S/. 1,299.00",
+    image: "/images/prod-rtx-3060.webp",
+    badge: "Diseño Exclusivo",
+    inStock: true,
+    warranty: "24 Meses de Garantía"
+  },
+
+  // --- Memorias RAM ---
+  {
+    id: "ram-corsair-ddr5-32gb",
+    name: "Memoria RAM Corsair Vengeance RGB 32GB (2x16GB) DDR5 6000MHz",
+    category: "memorias",
+    categoryLabel: "Memorias RAM",
+    specs: ["Kit Dual Channel 32GB", "Velocidad: 6000MHz DDR5", "Iluminación RGB Dinámica", "Intel XMP 3.0 / AMD EXPO"],
+    price: 489,
+    priceFormatted: "S/. 489.00",
+    image: "/images/prod-ram-corsair-ddr5.webp",
+    badge: "DDR5 Gaming",
+    inStock: true,
+    warranty: "Garantía de por Vida"
+  },
+  {
+    id: "ram-gskill-ripjaws-16gb",
+    name: "Memoria RAM G.Skill Ripjaws V 16GB (2x8GB) DDR4 3200MHz",
+    category: "memorias",
+    categoryLabel: "Memorias RAM",
+    specs: ["Kit Dual Channel 16GB", "Velocidad: 3200MHz CL16", "Disipador de Aluminio Rojo", "Optimizado Intel & AMD"],
+    price: 199,
+    priceFormatted: "S/. 199.00",
+    image: "/images/prod-ram-gskill.webp",
+    badge: "Económico Gamer",
+    inStock: true,
+    warranty: "Garantía de por Vida"
+  },
+  {
+    id: "ram-crucial-ballistix-16gb",
+    name: "Memoria RAM Crucial Ballistix Sport 16GB (2x8GB) DDR4 3200MHz",
+    category: "memorias",
+    categoryLabel: "Memorias RAM",
+    specs: ["Capacidad: 16GB Kit", "Velocidad: 3200MHz", "Disipador de Perfil Bajo", "Soporte XMP 2.0 Plug & Play"],
+    price: 189,
+    priceFormatted: "S/. 189.00",
+    image: "/images/prod-ram-crucial.webp",
+    badge: "Máxima Estabilidad",
+    inStock: true,
+    warranty: "Garantía de por Vida"
+  },
+
+  // --- Almacenamiento ---
+  {
+    id: "ssd-kingston-nv2-1tb",
+    name: "SSD M.2 NVMe Kingston NV2 1TB PCIe 4.0",
+    category: "almacenamiento",
+    categoryLabel: "Almacenamiento",
+    specs: ["Capacidad: 1TB", "Lectura secuencial 3500 MB/s", "Formato M.2 2280", "Gen 4x4 NVMe de bajo consumo"],
+    price: 269,
+    priceFormatted: "S/. 269.00",
+    image: "/images/prod-ssd-kingston.webp",
+    badge: "Más Vendido",
+    inStock: true,
+    warranty: "36 Meses de Garantía"
+  },
+  {
+    id: "ssd-samsung-980pro-1tb",
+    name: "SSD Samsung 980 PRO 1TB PCIe 4.0 NVMe M.2",
+    category: "almacenamiento",
+    categoryLabel: "Almacenamiento",
+    specs: ["Capacidad: 1TB", "Lectura extrema hasta 7000 MB/s", "Controlador Samsung Elpis", "Ideal para PS5 y PCs Gamer"],
+    price: 439,
+    priceFormatted: "S/. 439.00",
+    image: "/images/prod-ssd-samsung-980.webp",
+    badge: "Velocidad Pro",
+    inStock: true,
+    warranty: "60 Meses de Garantía"
+  },
+  {
+    id: "ssd-samsung-870-1tb",
+    name: "SSD SATA III Samsung 870 1TB 2.5\"",
+    category: "almacenamiento",
+    categoryLabel: "Almacenamiento",
+    specs: ["Capacidad: 1TB", "Lectura secuencial hasta 560 MB/s", "Formato estándar 2.5 pulg.", "Ideal para revivir laptops y PCs"],
+    price: 299,
+    priceFormatted: "S/. 299.00",
+    image: "/images/prod-ssd-samsung-870.webp",
+    badge: "Upgrade Rápido",
+    inStock: true,
+    warranty: "36 Meses de Garantía"
+  },
+
+  // --- Placas Madre ---
+  {
+    id: "placa-asus-tuf-gaming",
+    name: "Placa Madre ASUS TUF Gaming B450-PLUS ATX",
+    category: "placas",
+    categoryLabel: "Placas Madre",
+    specs: ["Socket AMD AM4", "Protección TUF Grado Militar", "Slot M.2 NVMe PCIe", "Audio Gamer Realtek 7.1"],
+    price: 479,
+    priceFormatted: "S/. 479.00",
+    image: "/images/prod-mb-asus-tuf.webp",
+    badge: "Resistencia Militar",
+    inStock: true,
+    warranty: "36 Meses de Garantía"
+  },
+  {
+    id: "placa-asus-prime-x570",
+    name: "Placa Madre ASUS Prime X570-P AM4 PCIe 4.0",
+    category: "placas",
+    categoryLabel: "Placas Madre",
+    specs: ["Socket AMD AM4 Ryzen", "Doble PCIe 4.0 M.2", "Disipador activo de Chipset", "Soporta hasta 128GB DDR4"],
+    price: 659,
+    priceFormatted: "S/. 659.00",
+    image: "/images/prod-mb-asus-prime.webp",
+    badge: "Chipset X570",
+    inStock: true,
+    warranty: "36 Meses de Garantía"
+  },
+  {
+    id: "placa-asrock-matx",
+    name: "Placa Madre ASRock AM4 Micro-ATX Ultra Durable",
+    category: "placas",
+    categoryLabel: "Placas Madre",
+    specs: ["Formato Micro-ATX Compacto", "Socket AMD AM4", "Salidas HDMI & DVI", "Audio HD 7.1 canales"],
+    price: 299,
+    priceFormatted: "S/. 299.00",
+    image: "/images/prod-mb-asrock.webp",
+    badge: "Económica",
+    inStock: true,
+    warranty: "24 Meses de Garantía"
+  },
+
+  // --- Fuentes de Poder ---
+  {
+    id: "fuente-bequiet-straight-power",
+    name: "Fuente de Poder Be quiet! Straight Power 12 850W 80+ Gold",
     category: "fuentes",
     categoryLabel: "Fuentes de Poder",
-    specs: ["Potencia real: 750W", "Certificación 80+ Bronze", "Diseño Semi-Modular", "Protección OVP, UVP, SCP"],
-    price: 279,
-    priceFormatted: "S/. 279.00",
-    image: "/images/prod-psu.webp",
-    badge: "Energía Confiable",
+    specs: ["Potencia real: 850W", "Certificación 80+ Gold", "Ventilador Silent Wings ultrasilencioso", "Cables 100% Modulares"],
+    price: 539,
+    priceFormatted: "S/. 539.00",
+    image: "/images/prod-psu-bequiet.webp",
+    badge: "Ultra Silenciosa",
+    inStock: true,
+    warranty: "60 Meses de Garantía"
+  },
+  {
+    id: "fuente-bequiet-pcie5",
+    name: "Fuente de Poder 750W ATX 3.0 Modular PCIe 5.0 Ready",
+    category: "fuentes",
+    categoryLabel: "Fuentes de Poder",
+    specs: ["Potencia real: 750W", "Certificación 80+ Gold", "Conector 12VHPWR PCIe 5.0 600W", "Eficiencia energética 90%+"],
+    price: 449,
+    priceFormatted: "S/. 449.00",
+    image: "/images/prod-psu-pcie5.webp",
+    badge: "PCIe 5.0 / RTX 40",
+    inStock: true,
+    warranty: "36 Meses de Garantía"
+  },
+  {
+    id: "fuente-gamer-650w-bronze",
+    name: "Fuente de Poder Gamer 650W 80 Plus Bronze",
+    category: "fuentes",
+    categoryLabel: "Fuentes de Poder",
+    specs: ["Potencia real: 650W", "Certificación 80+ Bronze", "Ventilador silencioso de 120mm", "Protecciones OVP, UVP, SCP"],
+    price: 269,
+    priceFormatted: "S/. 269.00",
+    image: "/images/prod-psu-gamer.webp",
+    badge: "Confiable",
     inStock: true,
     warranty: "24 Meses de Garantía"
   }
@@ -183,7 +350,7 @@ export const PRODUCTS: Product[] = [
 
 export const STATS = [
   { value: "+12", label: "Años de Experiencia", desc: "Trayectoria técnica comprobada en Lima y Callao" },
-  { value: "+1,500", label: "Clientes Atendidos", desc: "Equipos armados y empresas aseguradas" },
+  { value: "+150", label: "Productos Disponibles", desc: "Equipos armados y empresas aseguradas" },
   { value: "24/7", label: "Soporte y Monitoreo", desc: "Atención ágil ante cualquier eventualidad" },
   { value: "100%", label: "Garantía Escrita", desc: "En todos nuestros componentes y servicios" }
 ];
